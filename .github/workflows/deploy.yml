@@ -1,0 +1,28 @@
+name: Deploy QRadar Offense Rules
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'rules/**'
+
+jobs:
+  deploy-to-qradar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install requests urllib3
+
+      - name: Run QRadar Deployment Script
+        env:
+          QRADAR_IP: ${{ secrets.QRADAR_IP }}
+          QRADAR_TOKEN: ${{ secrets.QRADAR_TOKEN }}
+        run: python scripts/deploy_rules.py
