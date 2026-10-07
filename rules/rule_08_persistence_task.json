@@ -1,0 +1,9 @@
+{
+  "name": "Custom - New Scheduled Task Created",
+  "description": "Detects creation of a new scheduled task for persistence (Event ID 4698)",
+  "enabled": true,
+  "severity": 7,
+  "certainty": 75,
+  "rule_type": "event",
+  "aql_filter": "SELECT * FROM events WHERE eventid = 4698"
+}

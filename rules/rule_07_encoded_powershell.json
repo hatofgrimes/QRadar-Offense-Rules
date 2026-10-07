@@ -1,0 +1,9 @@
+{
+  "name": "Custom - Suspicious Encoded PowerShell Execution",
+  "description": "Detects PowerShell execution with base64 encoded command switch (-enc) (Sysmon Event ID 1)",
+  "enabled": true,
+  "severity": 8,
+  "certainty": 80,
+  "rule_type": "event",
+  "aql_filter": "SELECT * FROM events WHERE eventid = 1 AND process LIKE '%powershell.exe%' AND commandline LIKE '%-enc%'"
+}

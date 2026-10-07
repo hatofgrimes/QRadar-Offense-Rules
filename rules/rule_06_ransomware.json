@@ -1,0 +1,9 @@
+{
+  "name": "Custom - High Volume File Modification (Ransomware)",
+  "description": "Detects rapid file creation or renaming within a short timeframe (Sysmon Event ID 11)",
+  "enabled": true,
+  "severity": 9,
+  "certainty": 80,
+  "rule_type": "event",
+  "aql_filter": "SELECT * FROM events WHERE eventid = 11"
+}

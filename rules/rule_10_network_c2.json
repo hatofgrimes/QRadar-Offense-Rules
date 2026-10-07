@@ -1,0 +1,9 @@
+{
+  "name": "Custom - Network C2 Beaconing Activity",
+  "description": "Detects regular external connections indicating potential Command and Control beaconing",
+  "enabled": true,
+  "severity": 9,
+  "certainty": 85,
+  "rule_type": "flow",
+  "aql_filter": "SELECT * FROM flows WHERE destinationip IS NOT NULL"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Custom - Windows Security Event Log Cleared",
+  "description": "Detects clearing of Windows Security log (Event ID 1102)",
+  "enabled": true,
+  "severity": 10,
+  "certainty": 90,
+  "rule_type": "event",
+  "aql_filter": "SELECT * FROM events WHERE eventid = 1102"
+}

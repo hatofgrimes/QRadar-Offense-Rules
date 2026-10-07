@@ -1,0 +1,9 @@
+{
+  "name": "Custom - New User Account Created",
+  "description": "Detects creation of a new domain or local user account (Event ID 4720)",
+  "enabled": true,
+  "severity": 6,
+  "certainty": 70,
+  "rule_type": "event",
+  "aql_filter": "SELECT * FROM events WHERE eventid = 4720"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Custom - Pass-the-Hash Lateral Movement Attempt",
+  "description": "Detects potential Pass-the-Hash logon via NTLM (Event ID 4624, Logon Type 9)",
+  "enabled": true,
+  "severity": 9,
+  "certainty": 85,
+  "rule_type": "event",
+  "aql_filter": "SELECT * FROM events WHERE eventid = 4624 AND logontype = 9"
+}

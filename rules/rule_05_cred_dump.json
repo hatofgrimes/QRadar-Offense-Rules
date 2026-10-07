@@ -1,0 +1,9 @@
+{
+  "name": "Custom - Credential Dumping via LSASS Access",
+  "description": "Detects process access to lsass.exe via Sysmon (Sysmon Event ID 10)",
+  "enabled": true,
+  "severity": 9,
+  "certainty": 85,
+  "rule_type": "event",
+  "aql_filter": "SELECT * FROM events WHERE eventid = 10 AND targetimage LIKE '%lsass.exe'"
+}

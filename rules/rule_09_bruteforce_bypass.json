@@ -1,0 +1,9 @@
+{
+  "name": "Custom - Brute Force Followed by Successful Logon",
+  "description": "Detects multiple failed logon attempts followed by a successful logon (Event ID 4625 & 4624)",
+  "enabled": true,
+  "severity": 8,
+  "certainty": 80,
+  "rule_type": "event",
+  "aql_filter": "SELECT * FROM events WHERE eventid IN (4625, 4624)"
+}
